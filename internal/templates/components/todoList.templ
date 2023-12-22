@@ -1,0 +1,9 @@
+package components
+
+templ ListOfTodos(todos []string) {
+	<ul>
+		for _, todo := range todos {
+			<li>{ todo }</li>
+		}
+	</ul>
+}

@@ -1,9 +1,14 @@
 package pages
 
 import "github.com/ayhonz/kaboom/internal/templates/shared"
+import "github.com/ayhonz/kaboom/internal/templates/components"
+
+var list = []string{"one", "two"}
 
 templ HomePage() {
 	@shared.Page("Home") {
 		<h1>Kaboom HOME!</h1>
+		@components.AddToDo()
+		@components.ListOfTodos(list)
 	}
 }
