@@ -1,8 +1,11 @@
 package components
 
 templ AddToDo() {
-	<form>
-		<input type="text" placeholder="Add a to-do item"/>
+	<form
+ 		hx-post="/todos"
+ 		hx-target="#todo-list"
+	>
+		<input id="todo" name="todo" type="text" placeholder="Add a to-do item"/>
 		<button type="submit">Add</button>
 	</form>
 }

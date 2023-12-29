@@ -1,7 +1,9 @@
 package components
 
 templ ListOfTodos(todos []string) {
-	<ul>
+	<ul
+ 		id="todo-list"
+	>
 		for _, todo := range todos {
 			<li>{ todo }</li>
 		}

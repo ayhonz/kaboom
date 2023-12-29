@@ -13,9 +13,7 @@ import "bytes"
 import "github.com/ayhonz/kaboom/internal/templates/shared"
 import "github.com/ayhonz/kaboom/internal/templates/components"
 
-var list = []string{"one", "two"}
-
-func HomePage() templ.Component {
+func HomePage(todos []string) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -55,7 +53,7 @@ func HomePage() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = components.ListOfTodos(list).Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = components.ListOfTodos(todos).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
