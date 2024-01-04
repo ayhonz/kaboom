@@ -23,7 +23,7 @@ func AddToDo() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form hx-post=\"/todos\" hx-target=\"#todo-list\"><input id=\"todo\" name=\"todo\" type=\"text\" placeholder=\"Add a to-do item\"> <button type=\"submit\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form hx-post=\"/todos\" hx-target=\"#todo-list\" hx-swap=\"beforeend\"><input id=\"todo\" name=\"todo\" type=\"text\" placeholder=\"Add a to-do item\"> <button type=\"submit\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
