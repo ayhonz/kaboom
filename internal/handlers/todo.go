@@ -1,4 +1,4 @@
-package todo
+package handlers
 
 import (
 	"github.com/ayhonz/kaboom/internal/templates/components"

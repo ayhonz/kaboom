@@ -1,4 +1,4 @@
-package home
+package handlers
 
 import (
 	"github.com/ayhonz/kaboom/internal/templates/pages"

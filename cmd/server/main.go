@@ -1,16 +1,15 @@
 package main
 
 import (
-	"github.com/ayhonz/kaboom/internal/features/home"
-	"github.com/ayhonz/kaboom/internal/features/todo"
+	"github.com/ayhonz/kaboom/internal/handlers"
 	"github.com/labstack/echo/v4"
 )
 
 func main() {
 	e := echo.New()
 
-	e.GET("/", home.HomeHandler)
-	e.POST("todos", todo.CreateToDoHandler)
+	e.GET("/", handlers.HomeHandler)
+	e.POST("todos", handlers.CreateToDoHandler)
 
 	e.Start(":8080")
 }
