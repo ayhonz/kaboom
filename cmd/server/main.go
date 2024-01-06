@@ -1,15 +1,28 @@
 package main
 
 import (
-	"github.com/ayhonz/kaboom/internal/handlers"
 	"github.com/labstack/echo/v4"
+	"github.com/ayhonz/kaboom/internal/model"
 )
+
+
+type application struct {
+	Todos []model.Todo
+}
 
 func main() {
 	e := echo.New()
 
-	e.GET("/", handlers.HomeHandler)
-	e.POST("todos", handlers.CreateToDoHandler)
+	app := &application{
+		Todos: []model.Todo{
+			model.Todo{ID: "1", Text: "todo"},
+			model.Todo{ID: "2", Text: "go outside"},
+			model.Todo{ID: "3", Text: "learn new algos"},
+		},
+	}
+
+	e.GET("/", app.HomeHandler)
+	e.POST("todos", app.CreateToDoHandler)
 
 	e.Start(":8080")
 }
