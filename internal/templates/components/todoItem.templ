@@ -1,5 +1,16 @@
 package components
 
-templ TodoItem(todo string) {
-	<li>{ todo }</li>
+import "github.com/ayhonz/kaboom/internal/model"
+
+templ TodoItem(todo model.Todo) {
+	<tr hx-swap-oob="beforeend:#todos-table">
+		<td>
+			{ todo.ID }
+		</td>
+		<td>
+			{ todo.Text }
+		</td>
+		<td></td>
+		<button type="button">X</button>
+	</tr>
 }

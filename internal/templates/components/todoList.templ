@@ -1,11 +1,26 @@
 package components
 
-templ ListOfTodos(todos []string) {
-	<ul
-		id="todo-list"
-	>
+import "github.com/ayhonz/kaboom/internal/model"
+
+templ ListOfTodos(todos[]model.Todo) {
+	<table>
+		<thead>
+			<td>id</td>
+			<td>todo</td>
+			<td>action</td>
+		</thead>
+		<tbody id="todos-table"></tbody>
 		for _, todo := range todos {
-			<li>{ todo }</li>
+			<tr>
+				<td>
+					{ todo.ID }
+				</td>
+				<td>
+					{ todo.Text }
+				</td>
+				<td></td>
+				<button type="button">X</button>
+			</tr>
 		}
-	</ul>
+	</table>
 }

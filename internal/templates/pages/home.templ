@@ -2,13 +2,12 @@ package pages
 
 import "github.com/ayhonz/kaboom/internal/templates/shared"
 import "github.com/ayhonz/kaboom/internal/templates/components"
+import "github.com/ayhonz/kaboom/internal/model"
 
-templ HomePage(todos []string) {
+templ HomePage(todos []model.Todo) {
 	@shared.Page("Home") {
 		<h1>Kaboom HOME!</h1>
-		<div>
-			@components.AddToDo()
-			@components.ListOfTodos(todos)
-		</div>
+		@components.AddToDo()
+		@components.ListOfTodos(todos)
 	}
 }
