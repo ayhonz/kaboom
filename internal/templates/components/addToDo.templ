@@ -3,6 +3,8 @@ package components
 templ AddToDo() {
 	<form
 		hx-post="/todos"
+		hx-target="#todos-list"
+		hx-swap="beforeend"
 	>
 		<input id="todo" name="todo" type="text" placeholder="Add a to-do item"/>
 		<button type="submit">Add</button>

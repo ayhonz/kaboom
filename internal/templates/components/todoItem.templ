@@ -3,14 +3,15 @@ package components
 import "github.com/ayhonz/kaboom/internal/model"
 
 templ TodoItem(todo model.Todo) {
-	<tr hx-swap-oob="beforeend:#todos-table">
-		<td>
+	<li>
+		<div>
 			{ todo.ID }
-		</td>
-		<td>
+		</div>
+		<div>
 			{ todo.Text }
-		</td>
-		<td></td>
-		<button type="button">X</button>
-	</tr>
+		</div>
+		<div>
+			<button type="button">X</button>
+		</div>
+	</li>
 }
