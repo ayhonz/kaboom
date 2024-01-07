@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"net/http"
+	"slices"
 
 	"github.com/ayhonz/kaboom/internal/model"
 	"github.com/ayhonz/kaboom/internal/templates/components"
@@ -22,4 +24,18 @@ func (app *application) CreateToDoHandler(c echo.Context) error {
 	app.Todos = append(app.Todos, todo)
 	fmt.Printf("%+v\n", todo)
 	return components.TodoItem(todo).Render(c.Request().Context(), c.Response())
+}
+
+func (app *application) DeleteTodoHandler(c echo.Context) error {
+	println("deleting todo")
+
+	id := c.Param("id")
+
+	for i, todo := range app.Todos {
+		if todo.ID == id {
+			app.Todos = slices.Delete(app.Todos, i, i+1)
+		}
+	}
+
+	return c.NoContent(http.StatusOK)
 }

@@ -1,9 +1,10 @@
 package components
 
 import "github.com/ayhonz/kaboom/internal/model"
+import "fmt"
 
 templ TodoItem(todo model.Todo) {
-	<li>
+	<li id="todo-item">
 		<div>
 			{ todo.ID }
 		</div>
@@ -11,7 +12,7 @@ templ TodoItem(todo model.Todo) {
 			{ todo.Text }
 		</div>
 		<div>
-			<button type="button">X</button>
+			<button type="button" hx-target="#todo-item" hx-swap="outerHTML" hx-delete={fmt.Sprintf("/todos/%v", todo.ID)}>X</button>
 		</div>
 	</li>
 }

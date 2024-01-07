@@ -23,6 +23,7 @@ func main() {
 
 	e.GET("/", app.HomeHandler)
 	e.POST("todos", app.CreateToDoHandler)
+	e.DELETE("todos/:id", app.DeleteTodoHandler)
 
 	e.Start(":8080")
 }
