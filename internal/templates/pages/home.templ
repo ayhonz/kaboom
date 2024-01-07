@@ -6,7 +6,7 @@ import "github.com/ayhonz/kaboom/internal/model"
 
 templ HomePage(todos []model.Todo) {
 	@shared.Page("Home") {
-		<h1>Kaboom HOME!</h1>
+		<h1 class="text-orange-300">Kaboom HOME!</h1>
 		@components.AddToDo()
 		@components.ListOfTodos(todos)
 	}

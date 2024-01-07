@@ -15,11 +15,13 @@ func main() {
 
 	app := &application{
 		Todos: []model.Todo{
-			model.Todo{ID: "1", Text: "todo"},
-			model.Todo{ID: "2", Text: "go outside"},
-			model.Todo{ID: "3", Text: "learn new algos"},
+			{ID: "1", Text: "todo"},
+			{ID: "2", Text: "go outside"},
+			{ID: "3", Text: "learn new algos"},
 		},
 	}
+
+	e.Static("/", "internal/assets")
 
 	e.GET("/", app.HomeHandler)
 	e.POST("todos", app.CreateToDoHandler)
